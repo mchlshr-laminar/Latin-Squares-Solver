@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Latin Squares Solver</title>
+	<link rel=StyleSheet href="latin-squares-interface.css" type="text/css"/>
+	<script type="text/javascript" src="latin-squares-interface.js"></script>
+	<script type="text/javascript" src="latin-squares-solver.js"></script>
+	<script type="text/javascript" src="solver-stack.js"></script>
+</head>
+
+<body>
+	<div id="main_bar">
+		<div id="title">
+			Latin Squares Solver
+		</div>
+	
+		<div id="solver" class="primary_pane">
+			<div id="display_area">
+			</div>
+			
+			<div id="control_sep" class="separator_line"></div>
+			<div id="control_area">
+				<button id="create_button" type="button" onclick="create_puzzle_clicked();">
+					Create Puzzle
+				</button>
+				<button id="solve_button" type="button" onclick="solve_button_clicked();">
+					Start
+				</button>
+				<button id="stop_button" type="button" onclick="stop_button_clicked();">
+					Stop
+				</button>
+				<button id="reset_button" type="button" onclick="reset_button_clicked();">
+					Reset
+				</button>
+			</div>
+				
+			<div id="param_sep" class="separator_line"></div>
+			<div id="parameter_area">
+				<div id="parameter_left" class="parameter_group">
+					<div id="size_input_area" class="parameter_field">
+						Grid Size:
+						<textarea id="size_input">5</textarea>
+					</div>
+					<div id="constraints_input_area" class="parameter_field">
+						Random Constraints:
+						<textarea id="constraints_input">10</textarea>
+					</div>
+				</div>
+				
+				<div id="parameter_middle" class="parameter_group">
+					<div id="restart_input_area" class="parameter_field">
+						Max Backtracks:
+						<textarea id="restart_input">-1</textarea>
+					</div>
+					<div id="fail_input_area" class="parameter_field">
+						Max Restarts:
+						<textarea id="fail_input">-1</textarea>
+					</div>
+				</div>
+				
+				<div id="parameter_right" class="parameter_group">
+					<div id="time_input_area" class="parameter_field">
+						Delay (ms):
+						<textarea id="time_input">100</textarea>
+					</div>
+				</div>
+			</div>
+			
+			<div id="bottom_sep" class="separator_line"></div>
+		</div>
+	
+		<div id="information_centerer">
+			<div id="information_pane" class="primary_pane">
+				<div>
+					Backtracks since restart: <span id="backtracks_since_restart_display">0</span>
+				</div>
+				<div>
+					Total backtracks: <span id="total_backtracks_display">0</span>
+				</div>
+				<div>
+					Restarts: <span id="restarts_display">0</span>
+				</div>
+				<div>
+					Status: <span id="status_display">Initial</span>
+				</div>
+			</div>
+			
+			<div id="pattern_creator" class="primary_pane">
+				Create Predefined Pattern:
+				<button id="create_heavy" type="button" onclick="create_heavy_tailed_pattern();">
+					Heavy Tailed Behaviour
+				</button>
+				<button id="create_imp" type="button" onclick="create_impossible_pattern(5);">
+					Unsolvable
+				</button>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div id="palette_bar" class="primary_pane">
+		<div id="palette_area">
+		</div>
+	</div>
+	
+	<div id="display_row_template" class="field_row"></div>
+	<div id="field_template" class="field"></div>
+	<div id="palette_field_template" class="palette_field"></div>
+</body>
+</html>
